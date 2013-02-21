@@ -15,25 +15,28 @@ QRgb RollingMedianCalculator::next(const QRgb &value)
     const int green = qGreen(value);
     const int blue = qBlue(value);
 
-    _r[red]++;
-    _g[green]++;
-    _b[blue]++;
+    if (_r.at(red) < 255)
+        _r[red]++;
+    if (_g.at(green) < 255)
+        _g[green]++;
+    if (_b.at(blue) < 255)
+        _b[blue]++;
 
-    QRgb toRet = qRgb(this->decimateByLowestReturnHighest(_r),
-                      this->decimateByLowestReturnHighest(_g),
-                      this->decimateByLowestReturnHighest(_b));
+    QRgb toRet = qRgb(RollingMedianCalculator::decimateByLowestReturnHighest(_r),
+                      RollingMedianCalculator::decimateByLowestReturnHighest(_g),
+                      RollingMedianCalculator::decimateByLowestReturnHighest(_b));
 
     return toRet;
 }
 
-//private
+//private static
 int RollingMedianCalculator::decimateByLowestReturnHighest(QVector<quint8> &vec)
 {
     int lowestNonZeroIndex = 0;
-    int lowestNonZero = 0;
+    quint8 lowestNonZero = 0;
 
     int highestIndex = 0;
-    int highest = 0;
+    quint8 highest = 0;
 
     for (int i = 0; i < 256; i++)
     {

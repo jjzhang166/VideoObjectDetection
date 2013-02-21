@@ -12,7 +12,7 @@ public:
     QRgb next(const QRgb& value);
 
 private:
-    int decimateByLowestReturnHighest(QVector<quint8>& vec);
+    static int decimateByLowestReturnHighest(QVector<quint8>& vec);
     QVector<quint8> _r;
     QVector<quint8> _g;
     QVector<quint8> _b;
