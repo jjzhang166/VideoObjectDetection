@@ -110,7 +110,7 @@ void MainWindow::on_actionTest_triggered()
         }
     }
 
-    _label->setPixmap(QPixmap::fromImage(bgImg));
+    _label->setPixmap(QPixmap::fromImage(diff));
     _label->show();
     QTimer::singleShot(1, this, SLOT(on_actionTest_triggered()));
 
