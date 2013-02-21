@@ -25,13 +25,14 @@
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>File</string>
+     <string>&amp;File</string>
     </property>
     <addaction name="actionOpen_Video"/>
+    <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menuOperations">
     <property name="title">
-     <string>Operations</string>
+     <string>&amp;Operations</string>
     </property>
     <addaction name="actionTest"/>
    </widget>
@@ -40,12 +41,26 @@
   </widget>
   <action name="actionOpen_Video">
    <property name="text">
-    <string>Open Video</string>
+    <string>&amp;Open Video</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
    </property>
   </action>
   <action name="actionTest">
    <property name="text">
-    <string>Test</string>
+    <string>&amp;Test</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>E&amp;xit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
    </property>
   </action>
  </widget>

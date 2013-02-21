@@ -3,8 +3,11 @@
 
 #include <QMainWindow>
 #include <QSharedPointer>
+#include <QLabel>
 
 #include "opencv2/opencv.hpp"
+
+#include "BackgroundFinder.h"
 
 namespace Ui {
 class MainWindow;
@@ -28,8 +31,10 @@ private:
     Ui::MainWindow *ui;
 
     QSharedPointer<cv::VideoCapture> _stream;
+    QSharedPointer<BackgroundFinder> _bgFinder;
+    QSharedPointer<QLabel> _label;
 };
 
-QImage Mat2QImage(const cv::Mat3b &src);
+QImage mat2QImage(const cv::Mat3b &src);
 
 #endif // MAINWINDOW_H

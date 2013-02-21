@@ -9,13 +9,13 @@ WIN32_CV_LIB = $(OPENCV_LIB)
 OPENCV_VERSION = 243
 
 win32:LIBS += -L$$WIN32_CV_LIB \
-                -lopencv_core \
-                -lopencv_imgproc \
-                -lopencv_features2d \
-                -lopencv_gpu \
-                -lopencv_highgui \
-                -lopencv_calib3d \
-                -lopencv_video
+                -lopencv_core243 \
+                -lopencv_imgproc243 \
+                -lopencv_features2d243 \
+                -lopencv_gpu243 \
+                -lopencv_highgui243 \
+                -lopencv_calib3d243 \
+                -lopencv_video243
 win32:INCLUDEPATH += $$WIN32_CV_INCLUDE
 
 QT       += core gui
@@ -27,8 +27,14 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        MainWindow.cpp
+        MainWindow.cpp \
+    BackgroundFinder.cpp \
+    RollingMedianCalculator.cpp \
+    RollingAverageCalculator.cpp
 
-HEADERS  += MainWindow.h
+HEADERS  += MainWindow.h \
+    BackgroundFinder.h \
+    RollingMedianCalculator.h \
+    RollingAverageCalculator.h
 
 FORMS    += MainWindow.ui
